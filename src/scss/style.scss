@@ -1,0 +1,65 @@
+body {
+    section {
+        form {
+            input {
+                height: 35px;
+                width: 120px;
+            }
+
+            .template {
+                height:40px;
+                width: 100px;
+            }
+            #sumar {
+                color: white;
+                background-color: lightblue;
+                border:none;
+                border-bottom: 1px solid gray;
+                border-right: 1px solid gray;
+            }
+
+            #sumar:hover {
+                border-top: 1px solid gray;
+                border-left: 1px solid gray;
+            }
+
+            #restar{
+                color: white;
+                background-color: lightpink;
+                border:none;
+                border-bottom: 1px solid gray;
+                border-right: 1px solid gray;
+            }
+
+            #restar:hover {
+                border-top: 1px solid gray;
+                border-left: 1px solid gray;
+            }
+
+            #dividir{
+                color: white;
+                background-color: lightgreen;
+                border:none;
+                border-bottom: 1px solid gray;
+                border-right: 1px solid gray;
+            }
+            #dividir:hover {
+                border-top: 1px solid gray;
+                border-left: 1px solid gray;
+            }
+
+            #multiplicar{
+                color: white;
+                background-color: lightcoral;
+                border:none;
+                border-bottom: 1px solid gray;
+                border-right: 1px solid gray;
+            }
+            #multiplicar:hover {
+                border-top: 1px solid gray;
+                border-left: 1px solid gray;
+            }
+            
+        }
+    }
+}

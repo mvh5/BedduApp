@@ -1,3 +1,20 @@
 body {
   background-color: gainsboro;
 }
+
+#resultado {
+  color: red;
+}
+#calculadoraID {
+  color: gray;
+}
+
+.template {
+  border:none;
+  border-bottom: 2px solid lightgrey;
+}
+
+.template2 {
+  border:none;
+  border-bottom: 2px solid lightgrey;
+}
