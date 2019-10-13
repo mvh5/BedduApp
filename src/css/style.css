@@ -18,3 +18,15 @@ body {
   border:none;
   border-bottom: 2px solid lightgrey;
 }
+
+#piedraID {
+  color: gray;
+}
+
+#ComputerResult {
+  color:red;
+}
+
+#whoWon {
+  color: red;
+}

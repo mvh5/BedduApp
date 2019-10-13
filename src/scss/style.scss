@@ -1,5 +1,5 @@
 body {
-    section {
+    .template {
         form {
             input {
                 height: 35px;
@@ -60,6 +60,33 @@ body {
                 border-left: 1px solid gray;
             }
             
+        }
+    }
+
+    .template2 {
+        form {
+            button {
+                color: white;
+                //background-color: lightpink;
+                border:none;
+                border-bottom: 1px solid gray;
+                border-right: 1px solid gray;
+                height:40px;
+                width: 100px;
+            }
+            button:hover {
+                border-top: 1px solid gray;
+                border-left: 1px solid gray;
+            }
+            #piedra1ID {
+                background-color: lightcoral;
+            }
+            #papelID {
+                background-color: lightgreen;
+            }
+            #tijeraID {
+                background-color: lightblue;
+            }
         }
     }
 }

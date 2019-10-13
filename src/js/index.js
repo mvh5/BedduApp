@@ -57,7 +57,128 @@ document.querySelector("#multiplicar").addEventListener(("click"), () => {
     const numB = multiplicacionView.parseInputs(multiplicacionView.getInputNumB)
 
     const resultado = Multiplicacion(numA,numB);
+    //console.log(resultado);
     return multiplicacionView.renderMultiplicacionView(resultado)
 })
 
 //Fin calculadora
+
+/*
+const piedraPapelTijera = (answer) => {
+    
+    var answers = ['piedra','papel','tijera'];
+    var randomNumber = Math.floor((Math.random() * 3) + 1);
+    var computerAnswer = answers[randomNumber];
+    console.log(computerAnswer);
+}
+*/
+var answers = ['piedra','papel','tijera'];
+var piedraButton = document.getElementById("piedra1ID");
+var computerResultTag = document.getElementById("ComputerResult");
+var quienGana = document.getElementById("whoWon");
+/*piedraButton.onclick = function() {
+    var randomNumber = Math.floor((Math.random() * 3) + 1);
+    
+    var computerResult = answers[randomNumber];
+    
+    const markup = `
+        <span>
+            Computer Answer is ${computerResult}
+        </span>
+    `;
+    computerResultTag.insertAdjacentHTML('beforeend',markup);
+
+}; */
+document.querySelector("#piedra1ID").addEventListener(("click"), () => {
+    event.preventDefault()
+    computerResultTag.innerHTML = "";
+    quienGana.innerHTML="";
+    var randomNumber = Math.floor((Math.random() * 3) );
+    
+    var computerResult = answers[randomNumber];
+
+    const markup = `
+        <span>
+            Computer Answer is ${computerResult}
+        </span>
+    `;
+    var resultadoFinal = "";
+    if (computerResult === 'piedra') {
+        resultadoFinal = "Empate"
+    } else if (computerResult === 'papel') {
+        resultadoFinal = 'Perdiste';
+    } else {
+        resultadoFinal = 'Ganaste'
+    }
+    const markup2 =  `
+    <span>
+        ${resultadoFinal}
+    </span>
+    `;
+
+    computerResultTag.insertAdjacentHTML('beforeend',markup);
+    quienGana.insertAdjacentHTML('beforeend',markup2);
+})
+
+document.querySelector("#papelID").addEventListener(("click"), () => {
+    event.preventDefault()
+    computerResultTag.innerHTML = "";
+    quienGana.innerHTML="";
+    var randomNumber = Math.floor((Math.random() * 3) );
+    
+    var computerResult = answers[randomNumber];
+
+    const markup = `
+        <span>
+            Computer Answer is ${computerResult}
+        </span>
+    `;
+    var resultadoFinal = "";
+    if (computerResult === 'papel') {
+        resultadoFinal = "Empate"
+    } else if (computerResult === 'tijera') {
+        resultadoFinal = 'Perdiste';
+    } else {
+        resultadoFinal = 'Ganaste'
+    }
+    const markup2 =  `
+    <span>
+        ${resultadoFinal}
+    </span>
+    `;
+
+    computerResultTag.insertAdjacentHTML('beforeend',markup);
+    quienGana.insertAdjacentHTML('beforeend',markup2);
+})
+
+document.querySelector("#tijeraID").addEventListener(("click"), () => {
+    event.preventDefault()
+    computerResultTag.innerHTML = "";
+    quienGana.innerHTML="";
+    var randomNumber = Math.floor((Math.random() * 3) );
+    
+    var computerResult = answers[randomNumber];
+
+    const markup = `
+        <span>
+            Computer Answer is ${computerResult}
+        </span>
+    `;
+    var resultadoFinal = "";
+    if (computerResult === 'tijera') {
+        resultadoFinal = "Empate"
+    } else if (computerResult === 'piedra') {
+        resultadoFinal = 'Perdiste';
+    } else {
+        resultadoFinal = 'Ganaste'
+    }
+    const markup2 =  `
+    <span>
+         ${resultadoFinal}
+    </span>
+    `;
+
+    computerResultTag.insertAdjacentHTML('beforeend',markup);
+    quienGana.insertAdjacentHTML('beforeend',markup2);
+})
+
