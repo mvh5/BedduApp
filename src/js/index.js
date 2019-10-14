@@ -223,3 +223,133 @@ document.querySelector("#fizzButton").addEventListener(("click"),() => {
     
 })
 
+//inicio tablas
+
+class Empleado {
+    constructor(nombre, area,sueldo) {
+        this._nombre = nombre;
+        this._area = area;
+        this._sueldo = sueldo;
+    }
+
+    get getName() {
+        return this._nombre;
+    }
+
+    get getSueldo() {
+        return this._sueldo;
+    }
+
+    get getDepartment() {
+        return this._area;
+    }
+}
+
+class Empresa {
+    constructor(nombre,empleados) {
+        this._nombre = nombre;
+        this._empleados = empleados;
+    }
+
+    agregarEmpleado(empleado) {
+        this._empleados.push(empleado);
+    }
+
+    get getEmpleados() {
+        return this._empleados;
+    }
+
+    imprimirEmpleados() {
+        for (let i = 0; i < this._empleados.length; i++) {
+            console.log(this._empleados[i].getName)
+        }
+    }
+    calcularNominas(area) {
+        if (area === "todos") {
+            var sum = 0;
+            for (let i = 0; i < this._empleados.length; i++) {
+                sum+= this._empleados[i].getSueldo
+            }
+            return sum;
+        } else {
+            var sum = 0;
+            for (let i = 0; i < this._empleados.length; i++) {
+                //console.log(this._empleados[i].getDepartment);
+                if (this._empleados[i].getDepartment === area) {
+                    sum+= this._empleados[i].getSueldo
+                }
+            }
+            return sum;
+        }
+    }
+}
+
+let empleado1 = new Empleado("Juan","Sistemas",100);
+let empleado2 = new Empleado("Jon","HR",200);
+let empleado3 = new Empleado("Perez","Finance",300);
+var empleadosTodos = [empleado1,empleado2,empleado3];
+let empresa1 = new Empresa("Bedu",empleadosTodos);
+let empleado4 = new Empleado("Jimenez","HR",400);
+empresa1.agregarEmpleado(empleado4);
+let myTable = document.getElementById("tabla1");
+
+let mostrarElementos = () => {
+    myTable.innerHTML = `
+    <tr>
+        <th>Nombre</th>
+        <th>Area</th>
+        <th>Salario</th>
+    </tr>
+    `
+ 
+    var todosLosEmpleados = empresa1.getEmpleados;
+    for (let i = 0; i < todosLosEmpleados.length; i++) {
+        var empleadoActual = todosLosEmpleados[i];
+        let lineaNueva = document.createElement("tr");
+        let column1 = document.createElement("td");
+        column1.innerText = empleadoActual.getName;
+        lineaNueva.appendChild(column1);
+
+        let column2 = document.createElement("td");
+        column2.innerText = empleadoActual.getDepartment
+        lineaNueva.appendChild(column2);
+
+        let column3 = document.createElement("td");
+        column3.innerText = empleadoActual.getSueldo
+        lineaNueva.appendChild(column3);
+
+        myTable.appendChild(lineaNueva);
+    }
+}
+
+mostrarElementos();
+
+let agregarUno = () => {
+    let newName = prompt("Nombre de la persona","null");
+    
+    let newDepartment = prompt("Nombre de su departamento","null");
+    let newSalary = prompt("Cual es su salario?","null");
+    let empleadoExtra = new Empleado(newName,newDepartment,parseInt(newSalary));
+    empresa1.agregarEmpleado(empleadoExtra);
+    mostrarElementos();
+}
+
+let calcularSueldoClick = () => {
+    let deptNombre = prompt("Nombre del departamento","null")
+    var sueldo = empresa1.calcularNominas(deptNombre);
+    alert(`Sueldo de ${deptNombre} es ${sueldo}`)
+}
+
+
+document.querySelector("#agregarEmpleadoBoton").addEventListener(("click"), () => {
+    event.preventDefault();
+    agregarUno();
+})
+
+document.querySelector("#sueldoBoton").addEventListener(("click"), () => {
+    event.preventDefault();
+    calcularSueldoClick();
+})
+
+
+
