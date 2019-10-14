@@ -23,8 +23,9 @@ document.querySelector("#sumar").addEventListener(("click"), () => {
     const numB = sumView.parseInputs(sumView.getInputNumB)
 
     const resultado = Sum(numA, numB)
-
-    return sumView.renderSumView(resultado)
+    if (Number.isNaN(resultado) === false) {
+        return sumView.renderSumView(resultado)
+    }
 })
 
 document.querySelector("#restar").addEventListener(("click"), () => {
@@ -35,7 +36,9 @@ document.querySelector("#restar").addEventListener(("click"), () => {
     const numB = restaView.parseInputs(restaView.getInputNumB)
 
     const resultado = Resta(numA,numB);
-    return restaView.renderRestaView(resultado)
+    if (Number.isNaN(resultado) === false) {
+        return restaView.renderRestaView(resultado)
+    }
 })
 
 document.querySelector("#dividir").addEventListener(("click"), () => {
@@ -46,7 +49,9 @@ document.querySelector("#dividir").addEventListener(("click"), () => {
     const numB = divisionView.parseInputs(divisionView.getInputNumB)
 
     const resultado = Division(numA,numB);
-    return divisionView.renderDivisionView(resultado)
+    if (Number.isNaN(resultado) === false) {
+        return divisionView.renderDivisionView(resultado)
+    }
 })
 
 document.querySelector("#multiplicar").addEventListener(("click"), () => {
@@ -58,7 +63,9 @@ document.querySelector("#multiplicar").addEventListener(("click"), () => {
 
     const resultado = Multiplicacion(numA,numB);
     //console.log(resultado);
-    return multiplicacionView.renderMultiplicacionView(resultado)
+    if (Number.isNaN(resultado) === false) {
+        return multiplicacionView.renderMultiplicacionView(resultado)
+    }
 })
 
 //Fin calculadora
@@ -180,5 +187,39 @@ document.querySelector("#tijeraID").addEventListener(("click"), () => {
 
     computerResultTag.insertAdjacentHTML('beforeend',markup);
     quienGana.insertAdjacentHTML('beforeend',markup2);
+})
+
+
+//fizz buzz
+
+var fizzBuzzDiv = document.getElementById("answersFizz");
+document.querySelector("#fizzButton").addEventListener(("click"),() => {
+    event.preventDefault();
+    fizzBuzzDiv.innerHTML = "";
+    var num1 = parseInt(document.querySelector("#numberfizBuz").value);
+    
+    if (Number.isNaN(num1)) {
+        
+    } else {
+        for (var i = 0; i < num1; i++) {
+            var randomVal = Math.floor(Math.random() * 50) + 1;
+            var cummString = ""+randomVal;
+            if (randomVal % 3 == 0) {
+                cummString+= " es FIZZ";
+                if (randomVal % 5 == 0) {
+                    cummString+="BUZZ";
+                }
+            } else if (randomVal % 5 == 0) {
+                cummString+= " es BUZZ";
+            }
+            const markup =  `
+                <h1 id="fizzAnswersID">
+                    ${cummString}
+                </h1>
+                `;
+            fizzBuzzDiv.insertAdjacentHTML('beforeend',markup);
+        }
+    }
+    
 })
 

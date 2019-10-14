@@ -30,3 +30,15 @@ body {
 #whoWon {
   color: red;
 }
+
+.template3 {
+  border:none;
+  border-bottom: 2px solid lightgrey;
+}
+
+#fizzAnswersID {
+  color: red;
+}
+#fizzBuzzTitleID {
+  color:gray;
+}

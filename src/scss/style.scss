@@ -89,4 +89,26 @@ body {
             }
         }
     }
+
+    .template3 {
+        form {
+            input {
+                height: 35px;
+                width: 120px;
+            }
+            button {
+                height:40px;
+                width: 120px;
+                color: white;
+                background-color: lightpink;
+                border:none;
+                border-bottom: 1px solid gray;
+                border-right: 1px solid gray;
+            }
+            button:hover {
+                border-top: 1px solid gray;
+                border-left: 1px solid gray;
+            }
+        }
+    }
 }
