@@ -351,5 +351,82 @@ document.querySelector("#sueldoBoton").addEventListener(("click"), () => {
     calcularSueldoClick();
 })
 
+//canvas
 
 
+
+let setPosition = (e) => {
+    pos.x = e.clientX
+    pos.y = e.clientY
+}
+
+let resize = () => {
+    ctx.canvas.width = innerWidth
+    ctx.canvas.height = innerHeight
+}
+var strokeStyleCol1 = '#c0392b';
+let draw = (e) => {
+    if (e.buttons !== 1) return
+
+    ctx.beginPath()
+
+    ctx.lineWidth = 5
+    ctx.lineCap = 'round'
+     ctx.strokeStyle = strokeStyleCol1
+
+    ctx.moveTo(pos.x, pos.y)
+    setPosition(e);
+    ctx.lineTo(pos.x, pos.y)
+
+    ctx.stroke()
+}
+
+let draw2 = (e) => {
+    if (e.buttons !== 1) return
+
+    ctx.beginPath()
+
+    ctx.lineWidth = 5
+    ctx.lineCap = 'round'
+     
+    ctx.strokeStyle = changeColor()
+
+    ctx.moveTo(pos.x, pos.y)
+    setPosition(e);
+    ctx.lineTo(pos.x, pos.y)
+
+    ctx.stroke()
+}
+
+var canv1 = document.getElementsByTagName("canvas");
+var ctx = canv1[0].getContext('2d');
+
+resize();
+var pos = { x: 0, y: 0 }
+
+addEventListener('resize',resize);
+document.addEventListener('mousemove', draw)
+document.addEventListener('mousedown', setPosition)
+document.addEventListener('mouseenter', setPosition)
+
+function changeColor() {
+    return  "#"+((1<<24)*Math.random()|0).toString(16);
+}
+
+document.querySelector("#cambiaColorBut").addEventListener(("click"), () => {
+    event.preventDefault();
+    document.removeEventListener('mousemove',draw2);
+    document.addEventListener('mousemove', draw);
+    strokeStyleCol1 = changeColor();
+})
+
+document.querySelector("#colorAle").addEventListener(("click"), () => {
+    event.preventDefault();
+    document.removeEventListener('mousemove',draw);
+    document.addEventListener('mousemove', draw2);
+})
+
+document.querySelector("#limpiarBut").addEventListener(("click"), () => {
+    event.preventDefault();
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+})

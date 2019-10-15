@@ -71,3 +71,8 @@ td {
 #tablaTituloID {
   color: gray;
 }
+
+canvas {
+  background-color: white;
+  width: 80%;
+}

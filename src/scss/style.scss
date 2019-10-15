@@ -135,4 +135,31 @@ body {
             }
         }
     }
+    .template5 {
+        form {
+            button {
+                height:40px;
+                width: 120px;
+                border:none;
+                border-bottom: 1px solid gray;
+                border-right: 1px solid gray;
+            }
+            button:hover {
+                border-top: 1px solid gray;
+                border-left: 1px solid gray;
+            }
+            #cambiaColorBut {
+                color: white;
+                background-color: lightseagreen;
+            }
+            #colorAle {
+                color: white;
+                background-color: rgb(175, 174, 226);
+            }
+            #limpiarBut{
+                color: white;
+                background-color: lightpink;
+            }
+        }
+    }
 }
