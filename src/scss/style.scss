@@ -111,4 +111,28 @@ body {
             }
         }
     }
+
+    .template4 {
+        form {
+            button {
+                height:40px;
+                width: 120px;
+                border:none;
+                border-bottom: 1px solid gray;
+                border-right: 1px solid gray;
+            }
+            button:hover {
+                border-top: 1px solid gray;
+                border-left: 1px solid gray;
+            }
+            #agregarEmpleadoBoton {
+                color: white;
+                background-color: lightskyblue;
+            }
+            #sueldoBoton {
+                color: white;
+                background-color: lightsalmon;
+            }
+        }
+    }
 }
