@@ -318,6 +318,22 @@ let mostrarElementos = () => {
         column3.innerText = empleadoActual.getSueldo
         lineaNueva.appendChild(column3);
 
+        let column4 = document.createElement("td");
+        let editarButton = document.createElement("button");
+        editarButton.setAttribute("class","templ1");
+        editarButton.setAttribute("id","editarBoton");
+        editarButton.innerText = "Editar Sueldo";
+        column4.appendChild(editarButton);
+        lineaNueva.appendChild(column4);
+
+        let column5 = document.createElement("td");
+        let removerBoton = document.createElement("button");
+        removerBoton.setAttribute("class","templ1");
+        removerBoton.setAttribute("id","removerBotonID");
+        removerBoton.innerText = "Remover";
+        column5.appendChild(removerBoton);
+        lineaNueva.appendChild(column5);
+
         myTable.appendChild(lineaNueva);
     }
 }
