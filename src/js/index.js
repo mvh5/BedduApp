@@ -358,6 +358,8 @@ document.querySelector("#sueldoBoton").addEventListener(("click"), () => {
 let setPosition = (e) => {
     pos.x = e.clientX
     pos.y = e.clientY
+    console.log(canv1.offsetLeft);
+    console.log(canv1.offsetTop);
 }
 
 let resize = () => {

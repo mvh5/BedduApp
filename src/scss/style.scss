@@ -1,3 +1,17 @@
+.templ1 {
+    height:40px;
+    width: 100px;
+    color: white;
+    border:none;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    &:hover {
+        border-top: 1px solid gray;
+        border-left: 1px solid gray;
+    }
+    
+}
+
 body {
     .template {
         form {
@@ -6,58 +20,25 @@ body {
                 width: 120px;
             }
 
-            .template {
-                height:40px;
-                width: 100px;
-            }
+           
             #sumar {
-                color: white;
-                background-color: lightblue;
-                border:none;
-                border-bottom: 1px solid gray;
-                border-right: 1px solid gray;
-            }
-
-            #sumar:hover {
-                border-top: 1px solid gray;
-                border-left: 1px solid gray;
+                @extend .templ1;
+                background-color: lightblue;    
             }
 
             #restar{
-                color: white;
+                @extend .templ1;
                 background-color: lightpink;
-                border:none;
-                border-bottom: 1px solid gray;
-                border-right: 1px solid gray;
-            }
-
-            #restar:hover {
-                border-top: 1px solid gray;
-                border-left: 1px solid gray;
             }
 
             #dividir{
-                color: white;
+                @extend .templ1;
                 background-color: lightgreen;
-                border:none;
-                border-bottom: 1px solid gray;
-                border-right: 1px solid gray;
-            }
-            #dividir:hover {
-                border-top: 1px solid gray;
-                border-left: 1px solid gray;
             }
 
             #multiplicar{
-                color: white;
+                @extend .templ1;
                 background-color: lightcoral;
-                border:none;
-                border-bottom: 1px solid gray;
-                border-right: 1px solid gray;
-            }
-            #multiplicar:hover {
-                border-top: 1px solid gray;
-                border-left: 1px solid gray;
             }
             
         }
@@ -66,18 +47,9 @@ body {
     .template2 {
         form {
             button {
-                color: white;
-                //background-color: lightpink;
-                border:none;
-                border-bottom: 1px solid gray;
-                border-right: 1px solid gray;
-                height:40px;
-                width: 100px;
+                @extend .templ1;
             }
-            button:hover {
-                border-top: 1px solid gray;
-                border-left: 1px solid gray;
-            }
+           
             #piedra1ID {
                 background-color: lightcoral;
             }
@@ -97,17 +69,10 @@ body {
                 width: 120px;
             }
             button {
+                @extend .templ1;
                 height:40px;
                 width: 120px;
-                color: white;
                 background-color: lightpink;
-                border:none;
-                border-bottom: 1px solid gray;
-                border-right: 1px solid gray;
-            }
-            button:hover {
-                border-top: 1px solid gray;
-                border-left: 1px solid gray;
             }
         }
     }
@@ -115,22 +80,14 @@ body {
     .template4 {
         form {
             button {
+                @extend .templ1;
                 height:40px;
                 width: 120px;
-                border:none;
-                border-bottom: 1px solid gray;
-                border-right: 1px solid gray;
-            }
-            button:hover {
-                border-top: 1px solid gray;
-                border-left: 1px solid gray;
             }
             #agregarEmpleadoBoton {
-                color: white;
                 background-color: lightskyblue;
             }
             #sueldoBoton {
-                color: white;
                 background-color: lightsalmon;
             }
         }
@@ -138,26 +95,15 @@ body {
     .template5 {
         form {
             button {
-                height:40px;
-                width: 120px;
-                border:none;
-                border-bottom: 1px solid gray;
-                border-right: 1px solid gray;
-            }
-            button:hover {
-                border-top: 1px solid gray;
-                border-left: 1px solid gray;
+                @extend .templ1;
             }
             #cambiaColorBut {
-                color: white;
                 background-color: lightseagreen;
             }
             #colorAle {
-                color: white;
                 background-color: rgb(175, 174, 226);
             }
             #limpiarBut{
-                color: white;
                 background-color: lightpink;
             }
         }
